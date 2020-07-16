@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "name":"hanoi",
+    "label": "Hà Nội",
+    "description": "Hà Nội là thủ đô vủa VN",
+    "area": "3.359 km"
+  },
+  {
+    "id": 2,
+    "name":"haiphong",
+    "label": "Hải Phòng",
+    "description": "Hải Phòng là đất ăn chơi",
+    "area": "3.359"
+  },
+  {
+    "id": 3,
+    "name": "cairo",
+    "label": "Cai rô, Ai Cập",
+    "description": "Thủ đô của ai cập",
+    "area": "9359"
+  },
+  {
+    "id": 4,
+    "name": "london",
+    "label": "Luân Đôn, Anh",
+    "description": "Luân đôn hihi",
+    "area": "49394"
+  },
+  {
+    "id": 5,
+    "name": "new york",
+    "label": "New York, Mỹ",
+    "description": "Ba Sọc",
+    "area": "99032"
+  },
+  {
+    "id": 6,
+    "name": "can tho",
+    "label": "Cần Thơ, Việt Nam",
+    "description": "Ba Sọc",
+    "area": "99032"
+  }
+]

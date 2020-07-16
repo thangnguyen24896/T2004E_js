@@ -1,0 +1,65 @@
+body{
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url("../imgs/weather.jpg");
+}
+h1{
+    text-align: center;
+    color: black;
+    font-size: 40px;
+}
+h2{
+    text-align: center;
+    color: whitesmoke;
+    font-size: 30px;
+}
+.item{
+    float: left;
+    width: 100%;
+    margin: 15px 0;
+    border: 1px solid #1b6d85;
+    border-radius: 5px;
+    background-color: #ffffff60;
+    padding: 20px;
+}
+.item p{
+    font-size: 20px;
+    color: black;
+}
+.item .temp{
+    font-size: 35px;
+}
+.item .desc{
+    font-size: 16px;
+}
+.item .img{
+    position: absolute;
+    right: 10px;
+    top: 40px;
+}
+.section{
+    float: left;
+    width: 100%;
+}
+#map{
+    width: 100%;
+    float: left;
+    height: 500px;
+}
+.cities{
+    float: left;
+    width: 100%;
+}
+.cities li{
+    float: left;
+    width: 100%;
+    list-style: none;
+    background-color: whitesmoke;
+    margin: 10px 0;
+}
+.cities li a{
+    text-align: left;
+    float: left;
+    width: 100%;
+    padding: 10px 20px;
+}

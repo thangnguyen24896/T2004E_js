@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include("head") %>
+<body>
+<section class="section">
+    <div class="container">
+        <form action="/" method="get">
+            <input type="text" name="cityname" class="form-control">
+            <button type="submit" class="btn btn-danger">Submit</button>
+        </form>
+
+        <h1>Thoi tiet hom nay va ngay mai</h1>
+        <h2>Thanh pho: </h2>
+        <h3>Bạn là người thứ: <%= counter %></h3>
+        <div class="row" id="weather">
+        </div>
+    </div>
+</section>
+<section class="section">
+    <div id="map">
+
+    </div>
+</section>
+<script type="text/javascript" src="lib/js/jquery.js"></script>
+<script type="text/javascript">
+    $ .ajax ({
+        url: "http://api.openweathermap.org/data/2.5/forecast",
+        method:"GET",
+        data: {
+            q:"<%= city %>>",
+            appid:"09a71427c59d38d6a34f89b47d75975c",
+            unit:"metric"
+        },
+
+        success: function(rs) {
+            $ (" h2 ") .text(rs.city.name + "," + rs.city.country);
+            rs.list.map(function(e) {
+                let item_html = "<div class=\"col-md-3 col-sm-4 col-xs-6\">\n" +
+                    "                    <div class=\"item\">\n" +
+                    "                        <p class=\"datetime\">"+e.dt_txt+"</p>\n" +
+                    "                        <p class=\"temp\">"+e.main.temp+"<span><sup>o</sup></span>C</p>\n" +
+                    "                        <p class=\"desc\">"+e.weather[0].description+"</p>\n" +
+                    "                        <img src=\"http://openweathermap.org/img/wn/"+e.weather[0].icon+"@2x.png\">\n" +
+                    "                    </div>\n" +
+                    "                </div>"
+                console.log(e.dt_txt);
+                $("#weather").append(item_html);
+            });
+        }
+    });
+    // map
+    var uluru = {lat: 21.0288, lng: 105.7795};
+    var coord = navigator.geolocation.getCurrentPosition(getLocation);
+    function getLocation(position) {
+        let uluru = {
+            lat: position.coords.latitude,
+            lng: position.coords.longitude
+        }
+        initMap();
+    }
+    function initMap() {
+        // The location of Uluru
+        // var uluru = {lat: 21.0288, lng: 105.7795};
+        // The map, centered at Uluru
+        var map = new google.maps.Map(
+            document.getElementById('map'), {zoom: 24, center: uluru});
+        // The marker, positioned at Uluru
+        var marker = new google.maps.Marker({position: uluru, map: map, label:"FPT HN"});
+    };
+
+</script>
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCaj0mHlR-keu-9hsR6d-gB0L9BclG04rk&callback=initMap&fbclid=IwAR0IyQT4-UEfsk7CtkOuas1U1kk8UrbYzyD5RCwg1WDM71mB38X2Mp-PgQ8">
+</script>
+</body>
+</html>

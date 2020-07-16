@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include("head") %>
+<body>
+<section class="section">
+    <div class="container">
+        <ul>
+            <% cities.map(function (e) { %>
+                <li>
+                    <h2>
+                        <a href="/thanh-pho/<%= e.name %>"> <%= e.label %></a>
+                    </h2>
+                </li>
+<!--             %= nghĩa là in ra          -->
+            <% }) %>
+        </ul>
+    </div>
+</section>
+</body>
+</html>
